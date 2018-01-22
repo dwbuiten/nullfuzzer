@@ -21,7 +21,7 @@
 
 static void errprint(void *data, const char *msg, int errnum)
 {
-    fprintf(stdout, "Backtrace Error (%d): %s.\n", errnum, msg);
+    fprintf(stderr, "Backtrace Error (%d): %s.\n", errnum, msg);
 }
 
 static int stackprint(void *data, uintptr_t pc, const char *filename, int lineno, const char *function)
@@ -29,7 +29,7 @@ static int stackprint(void *data, uintptr_t pc, const char *filename, int lineno
     /* We've reach the end of usefulness. */
     if (lineno == 0)
         return 1;
-    fprintf(stdout, "%s:%d in %s\n", function, lineno, filename);
+    fprintf(stderr, "%s:%d in %s\n", function, lineno, filename);
     return 0;
 }
 

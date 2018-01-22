@@ -33,7 +33,7 @@ PROT \
     iter = getiter(); \
 \
     if (!(getrand() % getprob())) { \
-        fprintf(stdout, \
+        fprintf(stderr, \
                 "FAILED. Iteration = %"PRIuFAST64", Seed = %u.\n", iter, getseed()); \
         printbt(); \
         return FAIL; \
